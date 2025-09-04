@@ -1,6 +1,6 @@
-import * as React from "react"
 
-import { Card, CardContent } from "@/components/ui/card"
+import GreenButton from "@/components/common/GreenButton"
+import ProductCard from "@/components/common/ProductCard"
 import {
   Carousel,
   CarouselContent,
@@ -8,15 +8,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import ProductCard from "@/components/common/ProductCard"
-import GreenButton from "@/components/common/GreenButton"
 
-import img11 from "@/assets/image-11.jpg";
-import img12 from "@/assets/image-12.jpg";
-import img13 from "@/assets/image-13.jpg";
+import img11 from "@/assets/image-11.jpg"
+import img12 from "@/assets/image-12.jpg"
+import img13 from "@/assets/image-13.jpg"
 
 export const products = [
   {
+    productId: 1,
     image: img11,
     title: "Brulee-wood Grain",
     price: "00$",
@@ -27,6 +26,7 @@ export const products = [
     colors: ["#7a6c5d", "#b4a49b", "#c2b1a0", "#8e7c70", "#b57241"],
   },
   {
+    productId: 2,
     image: img12,
     title: "Ashen Oak",
     price: "25$",
@@ -37,6 +37,7 @@ export const products = [
     colors: ["#d3c5b4", "#a69381", "#7b6857", "#5c4a3a", "#3a2a1d"],
   },
   {
+    productId: 3,
     image: img13,
     title: "Maple Sunrise",
     price: "30$",
@@ -68,7 +69,7 @@ export function CarouselSize() {
   </CarouselContent>
   <CarouselPrevious />
   <CarouselNext />
-</Carousel>  
+</Carousel>
 <GreenButton className="mt-4 w-sm text-center" text="View All Products" />
     </div>
   )
