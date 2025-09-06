@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
@@ -11,6 +10,8 @@ interface ProductCardProps {
   price: string
   features: string[]
   colors: string[]
+  availability?: string
+  description?: string
 }
 
 export default function ProductCard({
@@ -19,7 +20,9 @@ export default function ProductCard({
   title,
   price,
   features,
-  colors
+  colors,
+  availability,
+  description
 }: ProductCardProps) {
   return (
     <div className="w-xl  shadow-black/5 shadow-lg rounded-lg overflow-hidden">
@@ -64,19 +67,21 @@ export default function ProductCard({
 
           {/* Buttons */}
           <div className="flex gap-2 mt-4">
-            <Link href={`/products/${productId}`}><Button
+            <Link href={`/cart`}><Button
               variant="outline"
               className="rounded-full text-[#3F4919] border-[#94B316] w-44 h-12 text-2xl leading-8 py-2.5 px-7 hover:bg-green-50"
             >
               Shop Now
             </Button>
             </Link>
+            <Link href={`/products/${productId}`}>
             <Button
               variant="outline"
               className="rounded-full text-[#3F4919] border-[#94B316] w-52 h-12 text-2xl leading-8 py-2.5 px-7 hover:bg-green-50"
             >
               Explore more
             </Button>
+            </Link>
           </div>
         </div>
       </div>

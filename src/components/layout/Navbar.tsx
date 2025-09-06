@@ -1,15 +1,9 @@
 'use client'
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu"
-import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { ShoppingCart, User, ChevronDown } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { ShoppingCart, User } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { cn } from "@/lib/utils"
 
   const navLinks = [
     { href: "/", label: "Home " },
@@ -22,12 +16,12 @@ import { cn } from "@/lib/utils"
 export default function Navbar() {
   return (
     <header className=" container mx-auto bg-white flex justify-between items-center">
-     
+
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <Link 
-                key={link.label} 
-                href={link.href} 
+              <Link
+                key={link.label}
+                href={link.href}
                 className="text-[24px] font-medium text-[#3F4919] dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
               >
                 {link.label}
@@ -52,7 +46,9 @@ export default function Navbar() {
           <ShoppingCart className="text-lime-600 " />
         </Button>
         <Button variant="ghost" size="icon" className="bg-lime-100 h-[52px] rounded-4xl w-[52px]">
-          <User className="text-lime-600" />
+        <Link href="/registration">
+        <User className="text-lime-600" />
+        </Link>
         </Button>
       </div>
     </header>
